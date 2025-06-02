@@ -1,0 +1,577 @@
+{
+  "bankCards": [
+    {
+      "id": "1",
+      "userId": "1",
+      "cardNumber": "6037-9978-1234-5678",
+      "holderName": "عرفان جلیلیان",
+      "expirationDate": "1404/12"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "cardNumber": "5894-6321-5678-4321",
+      "holderName": "عرفان جلیلیان",
+      "expirationDate": "1405/05"
+    },
+    {
+      "id": "3",
+      "userId": 2,
+      "cardNumber": "6104-3378-9876-5432",
+      "holderName": "رضا نادری",
+      "expirationDate": "1403/10"
+    },
+    {
+      "id": "784a",
+      "cardNumber": "۱۲۳۴-۵۶۷۸-۹۱۲۳-۴۵۶۷",
+      "holderName": "عرفان جلیلیان",
+      "expirationDate": "1409/6",
+      "userId": "1"
+    },
+    {
+      "id": "f2ec",
+      "cardNumber": "۹۳۲۵-۱۲۱۲-۰۴۴۵-۷۴۲۵",
+      "holderName": "جاوید جلیلیان",
+      "expirationDate": "۱۴۰۹/۳",
+      "userId": "fc7a"
+    }
+  ],
+  "addresses": [
+    {
+      "id": "1",
+      "userId": "1",
+      "fullName": "عرفان جلیلیان",
+      "mobile": "09029656301",
+      "province": "تهران",
+      "city": "تهران",
+      "postalCode": "1234567890",
+      "addressLine": "تهران خیابان بهبودی نرسیده به خیابان ستارخان کوچه واعظی پلاک ۱۲",
+      "isDefault": true
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "fullName": "sara haghgo",
+      "mobile": "09121112222",
+      "province": "مازندران",
+      "city": "ساری",
+      "postalCode": "9876543210",
+      "addressLine": "خیابان فرهنگ، پلاک 8",
+      "isDefault": false
+    },
+    {
+      "id": "3",
+      "userId": "2",
+      "fullName": "سارا حقگو",
+      "mobile": "09351234567",
+      "province": "اصفهان",
+      "city": "اصفهان",
+      "postalCode": "1122334455",
+      "addressLine": "خیابان انقلاب، کوچه یاس، پلاک 24",
+      "isDefault": true
+    },
+    {
+      "id": "e1d0",
+      "fullName": "عرفان جلیلیان",
+      "mobile": "09213570389",
+      "province": "تهران",
+      "city": "تهران",
+      "postalCode": "1234567",
+      "addressLine": "تهران خیابان بهبودی نرسیده به خیابان ستارخان کوچه واعظی پلاک ۱۲",
+      "isDefault": false,
+      "userId": "1"
+    },
+    {
+      "id": "f50c",
+      "fullName": "سارا حقگو",
+      "mobile": "09029656301",
+      "province": "تهران",
+      "city": "تهران",
+      "postalCode": "2371234454",
+      "addressLine": "تهران کمیل روبه روی پارک بابایان کوچه حجت پلاک۱۲",
+      "isDefault": true,
+      "userId": "3"
+    },
+    {
+      "id": "a752",
+      "userId": "46d8",
+      "fullName": "بهروز جلیلیان",
+      "mobile": "09029656301",
+      "province": "",
+      "city": "",
+      "postalCode": "",
+      "addressLine": "",
+      "isDefault": true
+    },
+    {
+      "id": "2cbf",
+      "userId": "46d8",
+      "fullName": "بهروز جلیلیان",
+      "mobile": "09029656301",
+      "province": "",
+      "city": "",
+      "postalCode": "",
+      "addressLine": "",
+      "isDefault": false
+    },
+    {
+      "id": "a5cd",
+      "userId": "46d8",
+      "fullName": "بهروز جلیلیان",
+      "mobile": "09029656301",
+      "province": "",
+      "city": "",
+      "postalCode": "",
+      "addressLine": "",
+      "isDefault": false
+    },
+    {
+      "id": "710c",
+      "fullName": "جاوید جلیلیان",
+      "mobile": "۰۹۰۲۹۶۵۶۳۰۱",
+      "province": "تهران",
+      "city": "تهران",
+      "postalCode": "۱۲۳۹۸۵۰۹۸",
+      "addressLine": "تهران میدان صنعت کوچه ی محمدی پلاک ۷",
+      "isDefault": true,
+      "userId": "fc7a"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "1",
+      "userId": 1,
+      "productId": 2,
+      "title": "همکار",
+      "image": "http://localhost:3001/_next/image?url=https%3A%2F%2Fdkstatics-public.digikala.com%2Fdigikala-products%2F10f20857c68852fab0dd1e0e9d453e6ffc98a7a9_1727789352.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cm_lfit%2Ch_300%2Cw_300%2Fformat%2Cwebp%2Fquality%2Cq_80&w=1920&q=75",
+      "price": 550000
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "productId": 6,
+      "title": "نیمه شب",
+      "image": "http://localhost:3001/_next/image?url=https%3A%2F%2Fdkstatics-public.digikala.com%2Fdigikala-products%2F2d7fa11bf8e5cf88eed170fcb6583f33243e5c0e_1618656066.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cm_lfit%2Ch_300%2Cw_300%2Fformat%2Cwebp%2Fquality%2Cq_80&w=1920&q=75",
+      "price": 1200000
+    },
+    {
+      "id": "3",
+      "userId": 2,
+      "productId": 110,
+      "title": "همکار",
+      "image": "/images/products/110.jpg",
+      "price": 800000
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 1,
+      "products": [
+        {
+          "productId": 101,
+          "title": "دختر خودت باش دختر",
+          "quantity": 1,
+          "price": 500000
+        },
+        {
+          "productId": 102,
+          "title": "نیمه شب",
+          "quantity": 2,
+          "price": 350000
+        }
+      ],
+      "totalPrice": 1200000,
+      "status": "در حال پردازش",
+      "createdAt": "2025-05-22T09:30:00Z"
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "products": [
+        {
+          "productId": 103,
+          "title": "من عاشق امید شدم",
+          "quantity": 1,
+          "price": 300000
+        }
+      ],
+      "totalPrice": 300000,
+      "status": "ارسال شده",
+      "createdAt": "2025-05-20T14:00:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Erfan",
+      "lastName": "jalilian",
+      "email": "erfanjaliliyan83@gmail.com",
+      "password": "1383",
+      "phone": "09029656301"
+    },
+    {
+      "id": "2",
+      "name": "Ali",
+      "lastName": "jalilian",
+      "email": "ali@example.com",
+      "password": "123456",
+      "phone": "09120000000"
+    },
+    {
+      "id": "3",
+      "name": "Sara",
+      "lastName": "haghgo",
+      "email": "sara@example.com",
+      "password": "abcdef",
+      "phone": "09121112222"
+    },
+    {
+      "id": "06a2",
+      "name": "محمدرضا",
+      "lastName": "زریان",
+      "email": "zarian@gmail.com",
+      "password": "13831234",
+      "phone": "09029656301"
+    },
+    {
+      "id": "46d8",
+      "name": "بهروز",
+      "lastName": "جلیلیان",
+      "email": "behrooz@gmail.com",
+      "password": "123456",
+      "phone": "09029656301"
+    },
+    {
+      "id": "484b",
+      "name": "عارف",
+      "lastName": "محمدی ",
+      "email": "mohamdi@gmail.com",
+      "password": "12345",
+      "phone": "9029656300"
+    },
+    {
+      "id": "e58e",
+      "name": "منیژه",
+      "lastName": "نعمتی",
+      "email": "manizhe@gmail.com",
+      "password": "23456",
+      "phone": "09029656301"
+    },
+    {
+      "id": "fc7a",
+      "name": "جاوید",
+      "lastName": "جلیلیان",
+      "email": "javidjaliliyan@gmail.com",
+      "password": "1346",
+      "phone": "09029656301"
+    },
+    {
+      "id": "4761",
+      "name": "zahra",
+      "lastName": "fatemi",
+      "email": "z.fatemi@outlook.com",
+      "password": "Erfan83",
+      "phone": "09123456789"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "product_id": "12",
+      "user_name": "علی رضایی",
+      "rating": 5,
+      "comment": "یکی از بهترین کتاب‌هایی بود که خوندم!",
+      "created_at": "1403/12/20"
+    },
+    {
+      "id": "2",
+      "product_id": "12",
+      "user_name": "سارا موسوی",
+      "rating": 4,
+      "comment": "محتوای خوب و مفیدی داشت ولی چاپش معمولی بود.",
+      "created_at": "1403/12/21"
+    },
+    {
+      "id": "3",
+      "product_id": "7",
+      "user_name": "مهدی کرمی",
+      "rating": 3,
+      "comment": "برای شروع خوبه ولی انتظار بیشتری داشتم.",
+      "created_at": "1403/12/25"
+    }
+  ],
+  "MiddleBannerAd": [
+    {
+      "id": "1",
+      "title": "تخفیف ویژه برای کتاب‌های پرفروش",
+      "description": "همین امروز کتاب‌های پرطرفدار را با تخفیف‌های استثنایی خریداری کنید!",
+      "image_url": "https://tarh.ir/storage/products_watwermark/9mN1MCWzUmMyaTvnGWonK0b2B538PNKyFqOaDwJg.webp",
+      "cta_text": "مشاهده بیشتر",
+      "cta_link": "/special-offer"
+    }
+  ],
+  "Products": [
+    {
+      "id": "1",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 250000,
+      "discount_price": 150000,
+      "description": "کتاب خدمتکار اثر فریدا مک‌فادن ترجمۀ بهاره غفوری و بهناز همتی و مریم موسوی نشر آذرگون 3 جلدی",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/34871ce6849a1c59c16d05704c2bcbfc5c3cff75_1727528247.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "آیین محمود - آبیژ",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "رمان",
+      "stock": 398,
+      "sold_count": 290,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1404/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "2",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 550000,
+      "discount_price": 200000,
+      "description": "کتاب تصمیم گرفتم بیخیال باشم اثر کیم سوهیون ترجمه پریسا رجوند انتشارات آیین محمود",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/10f20857c68852fab0dd1e0e9d453e6ffc98a7a9_1727789352.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فرانسه",
+      "categories": "تاریخی",
+      "stock": 398,
+      "sold_count": 390,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1403/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "11",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 150000,
+      "discount_price": 100000,
+      "description": "کتاب 1984 اثر جورج اورول ترجمه زینب قاضی انتشارات آیین محمود",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/ec0c1fa19e6628d899b1b27c1194d1b249d650d8_1729583144.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "روانشناسی",
+      "stock": 398,
+      "sold_count": 490,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1402/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "3",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 200000,
+      "discount_price": 100000,
+      "description": "کتاب خدمتکار همه چیز را می‌بیند اثر فریدا مک‌فادن ترجمه بهناز همتی نشر آذرگون",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/fc71006378506d29e60f940dfa3385cfe0df0725_1689254355.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "اینگلیسی",
+      "categories": "فلسفوی",
+      "stock": 398,
+      "sold_count": 590,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1401/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "4",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 1250000,
+      "discount_price": 150000,
+      "description": "کتاب سم هستم بفرمایید اثر داستین تائو انتشارات آیین محمود",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/000e8b2ec74441969d8bdd9d8eeca9142be6fc3b_1707745386.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "رمان",
+      "stock": 398,
+      "sold_count": 690,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1400/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "5",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 450000,
+      "discount_price": 150000,
+      "description": "کتاب اول عاشق خودت باش اثر مارک رکلاو نشر آذرگون",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/ac4aafff7bddc41f6d194e182bdf7a57d01d8a4b_1731655347.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "رمان",
+      "stock": 398,
+      "sold_count": 790,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1399/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "6",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 500000,
+      "discount_price": 150000,
+      "description": "کتاب مکان اشتباه زمان اشتباه اثر جیلیان مک آلیستر نشر آذرگون",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/2d7fa11bf8e5cf88eed170fcb6583f33243e5c0e_1618656066.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "رمان",
+      "stock": 398,
+      "sold_count": 600,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1398/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "7",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 5000000,
+      "discount_price": 110000,
+      "description": "کتاب تصمیم گرفتم بی‌خیال باشم اثر کیم سوهیون ترجمه بهاره سیدغفوری نشر آذرگون",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/5289555.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "رمان",
+      "stock": 398,
+      "sold_count": 900,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1398/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "8",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 500000,
+      "discount_price": 150000,
+      "description": "کتاب راز خدمتکار اثر فریدا مک فادن انتشارات کتاب کوله پشتی",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/14672b390166494f927741d640fec8d1e3850218_1707562125.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "رمان",
+      "stock": 398,
+      "sold_count": 500,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1397/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "9",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 500900,
+      "discount_price": 157000,
+      "description": "کتاب مجموعه اشعار 365 روز بدون تو، سین زدی ولی جواب ندادی و من سزاوار خداحافظی بهتری بودم اثر آکیرا نشر آذرگون مجموعه سه جلدی",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/57083972eb1dc07062041ebb7deaceee6b345031_1707724585.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "رمان",
+      "stock": 398,
+      "sold_count": 520,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1396/01/06",
+      "updated_at": "1404/01/06"
+    },
+    {
+      "id": "10",
+      "title": "عنوان کتاب (ضروری)",
+      "author": "نویسنده/نویسندگان ",
+      "isbn": "شماره ISBN",
+      "price": 500000,
+      "discount_price": 150000,
+      "description": "کتاب کتابخانه نیمه شب اثر مت هیگ انتشارات کتاب کوله پشتی",
+      "cover_image": "https://dkstatics-public.digikala.com/digikala-products/3909ba10b784002cc876c2c521d8495cd5297701_1703513021.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "publisher": "نام ناشر (ضروری)",
+      "publication_date": "1404/01/06",
+      "pages": 400,
+      "language": "فارسی",
+      "categories": "رمان",
+      "stock": 398,
+      "sold_count": 607,
+      "average_rating": 10,
+      "reviews_count": 30,
+      "created_at": "1395/01/06",
+      "updated_at": "1404/01/06"
+    }
+  ],
+  "Advertising": [
+    {
+      "id": "1",
+      "image_url": "https://aghazino.com/wp-content/uploads/2020/12/banner-ads.jpg",
+      "title": "تخفیف ۴۰٪ کتاب‌های برنامه‌نویسی",
+      "subtitle": "تا پایان این هفته فرصت دارید!",
+      "link": "/books?category=programming&discount=40"
+    },
+    {
+      "id": "2",
+      "image_url": "https://ponisha.ir/blog/wp-content/uploads/2024/02/tablighat-banneri.jpg",
+      "title": "کتاب‌های تازه منتشر شده",
+      "subtitle": "به‌روزترین آثار را کشف کنید.",
+      "link": "/books?sort=-publication_date"
+    },
+    {
+      "id": "3",
+      "image_url": "https://novinhub.com/blog/wp-content/uploads/2022/07/website_banner_ads_blog-740x345.jpg",
+      "title": "کتاب‌های تازه منتشر شده",
+      "subtitle": "به‌روزترین آثار را کشف کنید.",
+      "link": "/books?sort=-publication_date"
+    },
+    {
+      "id": "4",
+      "image_url": "https://deema.agency/wp-content/uploads/2020/07/%DA%A9%D9%88%D8%B1%DB%8C-%D8%A8%D9%86%D8%B1%DB%8C.jpg",
+      "title": "کتاب‌های تازه منتشر شده",
+      "subtitle": "به‌روزترین آثار را کشف کنید.",
+      "link": "/books?sort=-publication_date"
+    }
+  ]
+}

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import localFont from 'next/font/local'
+
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "./Components/navbar";
+import Footer from "./Components/Footer/Footer";
+import { ProductProvider } from "@/app/Contexts/ProductContext"
+import {CartProvider} from "@/app/Contexts/CartContext"
+import {AuthProvider} from "@/app/Contexts/AuthContext"
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +18,23 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const vazir = localFont({
+  src: [
+    {
+      path: './fonts/vazir/Vazir.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/vazir/Vazir-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-vazir',
+  display: 'swap',
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +49,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${vazir.variable} antialiased`}
       >
+        <AuthProvider>
+        <CartProvider>
+        <ProductProvider>
+        <Navbar />
         {children}
+        <Footer />
+        </ProductProvider>
+        </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
