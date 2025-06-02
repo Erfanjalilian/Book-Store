@@ -32,7 +32,7 @@ export default function Registration() {
   }
   async function handeldata(){
 
-    const result=await fetch("http://localhost:3000/users",{
+    const result=await fetch("https://683dc48d199a0039e9e6ce6e.mockapi.io/users",{
       method:"POST",
       headers:{
         "Content-Type": "application/json"

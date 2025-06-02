@@ -32,7 +32,7 @@ function OrderUserPanel() {
     if (!myId) return;
 
     setLoading(true);
-    fetch(`http://localhost:3000/orders/${myId}`)
+    fetch(`https://683dc48d199a0039e9e6ce6e.mockapi.io/orders/${myId}`)
       .then(res => res.json())
       .then(orderData => {
         setData(orderData);

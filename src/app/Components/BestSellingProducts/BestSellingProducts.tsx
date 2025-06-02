@@ -28,7 +28,7 @@ export default function BestSellerCarousel() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('http://localhost:3000/Products')
+        const res = await fetch('https://683dbdd7199a0039e9e6b54e.mockapi.io/Products')
         const data = await res.json()
         const bestSellers = data.filter((item: Product) => item.sold_count > 100)
         setProducts(bestSellers)

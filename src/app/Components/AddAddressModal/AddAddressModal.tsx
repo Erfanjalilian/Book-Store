@@ -55,8 +55,8 @@ export default function AddAddressModal({ onClose, onSuccess, editData }: AddAdd
     };
 
     const url = editData
-      ? `http://localhost:3000/addresses/${editData.id}`
-      : "http://localhost:3000/addresses";
+      ? `https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses/${editData.id}`
+      : "https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses";
 
     const method = editData ? "PUT" : "POST";
 

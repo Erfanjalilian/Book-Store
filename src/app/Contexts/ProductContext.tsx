@@ -56,7 +56,7 @@ export const ProductProvider = ({ children }: { children: React.ReactNode }) => 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('http://localhost:3000/Products')
+        const res = await fetch('https://683dbdd7199a0039e9e6b54e.mockapi.io/Products')
         const data = await res.json()
         setAllProducts(data)
         setFilteredProducts(data)

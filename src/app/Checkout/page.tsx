@@ -24,7 +24,7 @@ const Checkout = () => {
         const fetchData = async () => {
           if (!user) return;
           try {
-            const res = await fetch(`http://localhost:3000/addresses?userId=${user.id}`);
+            const res = await fetch(`https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses?userId=${user.id}`);
             if (!res.ok) throw new Error('مشکلی در دریافت داده رخ داد');
             const result = await res.json();
             setData(result);

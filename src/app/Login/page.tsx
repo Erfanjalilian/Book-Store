@@ -19,7 +19,7 @@ const LoginPage = () => {
     const field = isPhone ? 'phone' : 'email';
 
     try {
-      const res = await fetch(`http://localhost:3000/users?${field}=${identifier}&password=${password}`);
+      const res = await fetch(`https://683dc48d199a0039e9e6ce6e.mockapi.io/users?${field}=${identifier}&password=${password}`);
       const data = await res.json();
 
       if (data.length === 1) {

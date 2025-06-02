@@ -28,7 +28,7 @@ export default function SpecialOffers() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:3000/Products')
+        const response = await fetch('https://683dbdd7199a0039e9e6b54e.mockapi.io/Products')
         const data = await response.json()
         setProducts(data)
       } catch (error) {

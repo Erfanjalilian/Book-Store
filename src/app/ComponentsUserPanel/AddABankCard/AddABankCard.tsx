@@ -51,8 +51,8 @@ export default function AddAddABankCard({ onClose, onSuccess, editData }: bankCa
     };
 
     const url = editData
-      ? `http://localhost:3000/bankCards/${editData.id}`
-      : "http://localhost:3000/bankCards";
+      ? `https://683dc6f7199a0039e9e6d7ab.mockapi.io/bankCards/${editData.id}`
+      : "https://683dc6f7199a0039e9e6d7ab.mockapi.io/bankCards";
       
 
     const method = editData ? "PUT" : "POST";

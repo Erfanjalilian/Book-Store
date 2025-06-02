@@ -24,7 +24,7 @@ export default function AddressPage() {
 
   const fetchAddresses = async () => {
     if (!user) return;
-    const res = await fetch(`http://localhost:3000/addresses?userId=${user.id}`);
+    const res = await fetch(`https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses?userId=${user.id}`);
     const data = await res.json();
     setAddresses(data);
   };
@@ -34,7 +34,7 @@ export default function AddressPage() {
   }, [user]);
 
   const handleDelete = async (id: number) => {
-    await fetch(`http://localhost:3000/addresses/${id}`, {
+    await fetch(`https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses/${id}`, {
       method: "DELETE",
     });
     fetchAddresses();

@@ -40,7 +40,7 @@ export default function ProductPage({ params }: Props) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/Products/${params.slug}`)
+        const res = await fetch(`https://683dbdd7199a0039e9e6b54e.mockapi.io/Products/${params.slug}`)
         if (!res.ok) {
           throw new Error('Product not found')
         }

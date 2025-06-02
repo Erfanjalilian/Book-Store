@@ -24,7 +24,7 @@ export default function Slider() {
   useEffect(() => {
     const fetchSlides = async () => {
       try {
-        const res = await fetch('http://localhost:3000/Advertising')
+        const res = await fetch('https://683dbdd7199a0039e9e6b54e.mockapi.io/Advertising')
         const data = await res.json()
         setSlides(data)
       } catch (error) {

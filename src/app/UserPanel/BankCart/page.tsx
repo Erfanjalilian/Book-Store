@@ -25,7 +25,7 @@ function BankCart() {
  
   const fetchBankCart = async () => {
     if (!user) return;
-    const res = await fetch(`http://localhost:3000/bankCards?userId=${user.id}`);
+    const res = await fetch(`https://683dc6f7199a0039e9e6d7ab.mockapi.io/bankCards?userId=${user.id}`);
     const data = await res.json();
     setCards(data);
   };
@@ -35,7 +35,7 @@ function BankCart() {
  
 
   const handleDelete = async (id: number) => {
-    await fetch(`http://localhost:3000/bankCards/${id}`, {
+    await fetch(`https://683dc6f7199a0039e9e6d7ab.mockapi.io/bankCards/${id}`, {
       method: "DELETE",
     });
     fetchBankCart();

@@ -19,7 +19,7 @@ export default function Comments() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch('http://localhost:3000/comments')
+        const res = await fetch('https://683dc34a199a0039e9e6c8b6.mockapi.io/comments')
         const data = await res.json()
         setComments(data)
       } catch (error) {

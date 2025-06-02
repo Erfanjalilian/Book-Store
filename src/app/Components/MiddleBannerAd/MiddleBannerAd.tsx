@@ -1,7 +1,7 @@
 
 
 async function MiddleBannerAd(){
-    const res=await fetch("http://localhost:3000/MiddleBannerAd")
+    const res=await fetch("https://683dc34a199a0039e9e6c8b6.mockapi.io/MiddleBannerAd")
     const data=await res.json()
 
   

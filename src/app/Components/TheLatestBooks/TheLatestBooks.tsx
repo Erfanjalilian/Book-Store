@@ -30,7 +30,7 @@ export default function TheLatestBooks() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('http://localhost:3000/Products')
+        const res = await fetch('https://683dbdd7199a0039e9e6b54e.mockapi.io/Products')
         const data = await res.json()
 
         // مرتب‌سازی بر اساس تاریخ شمسی

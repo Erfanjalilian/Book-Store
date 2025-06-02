@@ -21,7 +21,7 @@ function Favorites() {
   useEffect(() => {
     if (!myId) return;
 
-    fetch(`http://localhost:3000/favorites?userId=${myId}`)
+    fetch(`https://683dc5b3199a0039e9e6d25e.mockapi.io/favorites?userId=${myId}`)
       .then((res) => res.json())
       .then((data) => setFavorites(data))
       .catch((error) => {
