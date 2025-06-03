@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Slider from "./Components/Slider/Slider"
 import BestBestSellerCarousel from "./Components/BestSellingProducts/BestSellingProducts"
 import TheLatestBooks from "./Components/TheLatestBooks/TheLatestBooks";

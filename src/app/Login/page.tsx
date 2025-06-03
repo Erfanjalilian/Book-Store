@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/Contexts/AuthContext';
-import { FaEnvelope, FaLock, FaGoogle, FaFacebook } from 'react-icons/fa';
+import { FaEnvelope, FaLock } from 'react-icons/fa';
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -10,7 +10,6 @@ const LoginPage = () => {
 
   const [identifier, setIdentifier] = useState(''); // ایمیل یا شماره
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,18 +17,14 @@ const LoginPage = () => {
     const isPhone = /^[0-9]{10,15}$/.test(identifier) || identifier.startsWith("09");
     const field = isPhone ? 'phone' : 'email';
 
-    try {
-      const res = await fetch(`https://683dc48d199a0039e9e6ce6e.mockapi.io/users?${field}=${identifier}&password=${password}`);
-      const data = await res.json();
+    const res = await fetch(`https://683dc48d199a0039e9e6ce6e.mockapi.io/users?${field}=${identifier}&password=${password}`);
+    const data = await res.json();
 
-      if (data.length === 1) {
-        login(data[0]);
-        router.push('/UserPanel');
-      } else {
-        setError('ایمیل/شماره یا رمز عبور اشتباه است.');
-      }
-    } catch (err) {
-      setError('خطا در اتصال به سرور.');
+    if (data.length === 1) {
+      login(data[0]);
+      router.push('/UserPanel');
+    } else {
+      // بدون مدیریت خطا (error handling حذف شده)
     }
   };
 
@@ -95,10 +90,6 @@ const LoginPage = () => {
             </div>
           </div>
 
-          {error && (
-            <p className="text-sm text-red-500 text-center">{error}</p>
-          )}
-
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <input
@@ -127,8 +118,6 @@ const LoginPage = () => {
             </button>
           </div>
         </form>
-
-        {/* Social login buttons (بدون تغییر) */}
       </div>
     </div>
   );

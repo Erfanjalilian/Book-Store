@@ -24,7 +24,7 @@ export interface Product {
   updated_at: string
 }
 
-interface PriceRange {
+export interface PriceRange {
   min: number
   max: number
 }

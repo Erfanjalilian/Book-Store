@@ -10,7 +10,7 @@ import { useCart } from "@/app/Contexts/CartContext"
 import { useRouter } from 'next/navigation';
 
 
-export default function navbar() {
+export default function Navbar() {
   const {cart} = useCart()
   const {user, logout } = useAuth();
   const router = useRouter();

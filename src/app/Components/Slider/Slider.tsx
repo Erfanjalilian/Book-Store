@@ -8,6 +8,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Slide {
   id: number
@@ -58,11 +59,14 @@ export default function Slider() {
         >
           {slides.map(slide => (
             <SwiperSlide key={slide.id}>
-              <Link href={slide.link} className="block relative group">
-                <img
+              <Link href={slide.link} className="block relative group w-full h-[250px] md:h-[400px]">
+                <Image
                   src={slide.image_url}
                   alt={slide.title}
-                  className="w-full h-[250px] md:h-[400px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="transition-transform duration-700 ease-in-out group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-start p-6 md:p-10 text-white">
                   <h2 className="text-2xl md:text-4xl font-bold mb-2">{slide.title}</h2>

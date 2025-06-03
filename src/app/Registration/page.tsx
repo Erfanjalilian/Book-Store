@@ -1,55 +1,53 @@
-"use client"
+"use client";
 
-// pages/registration.js
 import { useState } from "react";
 
-
 export default function Registration() {
- 
-  const [name,setname]=useState<string>('')
-  const[lastName,setlastName]=useState<string>('')
-  const[email,setemail]=useState<string>('')
-  const[password,setpassword]=useState<string>('')
-  const[phone,setphone]=useState<string>('')
+  const [name, setname] = useState<string>('');
+  const [lastName, setlastName] = useState<string>('');
+  const [email, setemail] = useState<string>('');
+  const [password, setpassword] = useState<string>('');
+  const [phone, setphone] = useState<string>('');
 
-  function ChangeName(e:any){
-    setname(e.target.value)
+  function ChangeName(e: React.ChangeEvent<HTMLInputElement>) {
+    setname(e.target.value);
   }
-  function ChangeEmail(e:any){
-    setemail(e.target.value)
 
+  function ChangeEmail(e: React.ChangeEvent<HTMLInputElement>) {
+    setemail(e.target.value);
   }
-  function ChangePassword(e:any){
-    setpassword(e.target.value)
-  }
-  function Changephone(e:any){
-    setphone(e.target.value)
 
+  function ChangePassword(e: React.ChangeEvent<HTMLInputElement>) {
+    setpassword(e.target.value);
   }
-  function ChangelastName(e:any){
-    setlastName(e.target.value)
 
+  function Changephone(e: React.ChangeEvent<HTMLInputElement>) {
+    setphone(e.target.value);
   }
-  async function handeldata(){
 
-    const result=await fetch("https://683dc48d199a0039e9e6ce6e.mockapi.io/users",{
-      method:"POST",
-      headers:{
+  function ChangelastName(e: React.ChangeEvent<HTMLInputElement>) {
+    setlastName(e.target.value);
+  }
+
+  async function handeldata(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault(); // جلوگیری از رفرش فرم
+
+    await fetch("https://683dc48d199a0039e9e6ce6e.mockapi.io/users", {
+      method: "POST",
+      headers: {
         "Content-Type": "application/json"
       },
-      body:JSON.stringify({
-        name:name,
-        lastName:lastName,
-        email:email,
-        password:password,
-        phone:phone
-
+      body: JSON.stringify({
+        name,
+        lastName,
+        email,
+        password,
+        phone
       })
-    })
-    alert("لطفا در سایت لاگین کنید")
-    window.location.href = "/Login";
-   
+    });
 
+    alert("لطفا در سایت لاگین کنید");
+    window.location.href = "/Login";
   }
 
   return (
@@ -66,7 +64,7 @@ export default function Registration() {
             <div>
               <label className="block text-sm font-medium text-gray-700">نام</label>
               <input
-              value={name}
+                value={name}
                 type="text"
                 onChange={ChangeName}
                 className="appearance-none relative block w-full px-4 py-3 border border-gray-300 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -76,7 +74,7 @@ export default function Registration() {
             <div>
               <label className="block text-sm font-medium text-gray-700">نام خانوادگی</label>
               <input
-              value={lastName}
+                value={lastName}
                 type="text"
                 onChange={ChangelastName}
                 className="appearance-none relative block w-full px-4 py-3 border border-gray-300 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -87,7 +85,7 @@ export default function Registration() {
             <div>
               <label className="block text-sm font-medium text-gray-700">ایمیل</label>
               <input
-              value={email}
+                value={email}
                 type="email"
                 onChange={ChangeEmail}
                 className="appearance-none relative block w-full px-4 py-3 border border-gray-300 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -98,7 +96,7 @@ export default function Registration() {
             <div>
               <label className="block text-sm font-medium text-gray-700">رمز عبور</label>
               <input
-              value={password}
+                value={password}
                 type="password"
                 onChange={ChangePassword}
                 className="appearance-none relative block w-full px-4 py-3 border border-gray-300 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
@@ -108,18 +106,18 @@ export default function Registration() {
             <div>
               <label className="block text-sm font-medium text-gray-700">شماره تماس</label>
               <input
-              value={phone}
-                type="number"
+                value={phone}
+                type="tel"
                 onChange={Changephone}
                 className="appearance-none relative block w-full px-4 py-3 border border-gray-300 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="شماره  موبایل خود را وارد کنید"
+                placeholder="شماره موبایل خود را وارد کنید"
               />
             </div>
           </div>
 
           <div>
             <button
-            onClick={handeldata}
+              onClick={handeldata}
               type="button"
               className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >

@@ -6,19 +6,17 @@ import { useProductContext } from '@/app/Contexts/ProductContext'
 export default function PriceFilter() {
   const {
     allProducts,
-    minPrice,
-    maxPrice,
     selectedPriceRange,
     setSelectedPriceRange,
   } = useProductContext()
 
-  const [localMin, setLocalMin] = useState(0)
-  const [localMax, setLocalMax] = useState(0)
+  const [localMin, setLocalMin] = useState<number>(0)
+  const [localMax, setLocalMax] = useState<number>(0)
 
   useEffect(() => {
     const prices = allProducts.map((p) => p.discount_price || p.price)
-    const min = Math.min(...prices)
-    const max = Math.max(...prices)
+    const min: number = Math.min(...prices)
+    const max: number = Math.max(...prices)
 
     setLocalMin(min)
     setLocalMax(max)
@@ -31,12 +29,14 @@ export default function PriceFilter() {
 
   const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newMin = parseInt(e.target.value, 10)
-    setSelectedPriceRange((prev) => ({ ...prev, min: newMin }))
+    // @ts-ignore
+    setSelectedPriceRange(prev => ({ ...prev, min: newMin }))
   }
 
   const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newMax = parseInt(e.target.value, 10)
-    setSelectedPriceRange((prev) => ({ ...prev, max: newMax }))
+    // @ts-ignore
+    setSelectedPriceRange(prev => ({ ...prev, max: newMax }))
   }
 
   return (

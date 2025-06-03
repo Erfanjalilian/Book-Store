@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import AddAddressModal from "@/app/Components/AddAddressModal/AddAddressModal";
 import { useAuth } from "@/app/Contexts/AuthContext";
-import Sidebar from "@/app/ComponentsUserPanel/Sidebar/Sidebar"; // مسیر را با توجه به ساختار پوشه‌ها تغییر بده
+import Sidebar from "@/app/ComponentsUserPanel/Sidebar/Sidebar";
 
 interface Address {
   id: number;
@@ -22,16 +22,18 @@ export default function AddressPage() {
   const [showModal, setShowModal] = useState(false);
   const [editData, setEditData] = useState<Address | null>(null);
 
-  const fetchAddresses = async () => {
+  const fetchAddresses = useCallback(async () => {
     if (!user) return;
-    const res = await fetch(`https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses?userId=${user.id}`);
+    const res = await fetch(
+      `https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses?userId=${user.id}`
+    );
     const data = await res.json();
     setAddresses(data);
-  };
+  }, [user]);
 
   useEffect(() => {
     fetchAddresses();
-  }, [user]);
+  }, [fetchAddresses]);
 
   const handleDelete = async (id: number) => {
     await fetch(`https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses/${id}`, {
@@ -52,41 +54,63 @@ export default function AddressPage() {
         <Sidebar />
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Sidebar Toggle Button */}
       <div className="lg:hidden fixed bottom-4 right-4 z-40">
         <button
           onClick={() => {
-            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const mobileSidebar = document.getElementById("mobile-sidebar");
             if (mobileSidebar) {
-              mobileSidebar.classList.toggle('translate-x-full');
+              mobileSidebar.classList.toggle("translate-x-full");
             }
           }}
           className="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
       </div>
 
-      {/* Mobile Sidebar Menu */}
+      {/* Mobile Sidebar */}
       <div
         id="mobile-sidebar"
         className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transform translate-x-full transition-transform duration-300"
       >
-        <div className="absolute left-0 top-0 bottom-0 w-64 bg-white shadow-lg transform transition-transform duration-300">
+        <div className="absolute left-0 top-0 bottom-0 w-64 bg-white shadow-lg">
           <div className="p-4">
             <button
               onClick={() => {
-                const mobileSidebar = document.getElementById('mobile-sidebar');
+                const mobileSidebar = document.getElementById("mobile-sidebar");
                 if (mobileSidebar) {
-                  mobileSidebar.classList.add('translate-x-full');
+                  mobileSidebar.classList.add("translate-x-full");
                 }
               }}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
             <Sidebar />
@@ -95,18 +119,8 @@ export default function AddressPage() {
       </div>
 
       {/* Main Content */}
-
-
-
-
-
       <div className="flex-1 p-4 lg:p-6">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6">
-
-
-
-
-          
           <h1 className="text-2xl font-bold">آدرس‌های من</h1>
           <button
             onClick={() => {
@@ -124,7 +138,10 @@ export default function AddressPage() {
         ) : (
           <div className="grid gap-4">
             {addresses.map((address) => (
-              <div key={address.id} className="border border-gray-200 rounded-lg p-4 shadow-sm">
+              <div
+                key={address.id}
+                className="border border-gray-200 rounded-lg p-4 shadow-sm"
+              >
                 <p className="font-semibold">{address.fullName}</p>
                 <p>{address.mobile}</p>
                 <p>
