@@ -66,7 +66,11 @@ export default function ProductPage({ params }: Props) {
   }
 
   if (!product) {
-    return notFound()
+    return (
+      <div className="min-h-screen flex items-center justify-center text-xl text-red-600">
+        محصول پیدا نشد
+      </div>
+    )
   }
 
   const handleQuantityChange = (value: number) => {
