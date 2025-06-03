@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+
 import HandelSlug from "@/app/Components/HandelSlug/page"
 
 type PageProps = {
