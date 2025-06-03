@@ -3,10 +3,9 @@ import HandelSlug from "@/HandelSlug/page"
 
 type PageProps = {
   params: {
-    slug: string
-  }
-  searchParams?: { [key: string]: string | string[] | undefined }
-}
+    slug: string;
+  };
+};
 
 export default function ProductPage({ params }: PageProps) {
   return (
