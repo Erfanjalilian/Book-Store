@@ -2,6 +2,7 @@
 import Sidebar from "@/app/ComponentsUserPanel/Sidebar/Sidebar";
 import { useAuth } from "@/app/Contexts/AuthContext";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type Favorite = {
@@ -14,7 +15,7 @@ type Favorite = {
 };
 
 function Favorites() {
-  const { user, logout } = useAuth();
+  const { user} = useAuth();
   const [favorites, setFavorites] = useState<Favorite[]>([]);
   const myId = user?.id;
 
@@ -52,7 +53,7 @@ function Favorites() {
                 className="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center"
               >
                   <Link href={`/CategoriesPage/${fav.productId}`}>
-                          <img
+                          <Image
                           src={fav.image}
                           alt={fav.title}
                           className="w-40 h-40 object-cover rounded-lg mb-4"

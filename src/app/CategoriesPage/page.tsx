@@ -6,116 +6,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 // کامپوننت فیلتر ناشر
-function PublisherFilter() {
-  const { allProducts, selectedPublishers, setSelectedPublishers } = useProductContext()
 
-  const publishers = Array.from(new Set(allProducts.map((p) => p.publisher)))
-
-  const togglePublisher = (publisher: string) => {
-    if (selectedPublishers.includes(publisher)) {
-      setSelectedPublishers(selectedPublishers.filter((p) => p !== publisher))
-    } else {
-      setSelectedPublishers([...selectedPublishers, publisher])
-    }
-  }
-
-  return (
-    <div className="mb-6">
-      <h2 className="text-xl font-semibold mb-3">فیلتر بر اساس ناشر:</h2>
-      <div className="flex flex-wrap gap-3">
-        {publishers.map((publisher) => (
-          <button
-            key={publisher}
-            onClick={() => togglePublisher(publisher)}
-            className={`px-4 py-2 rounded-full border transition ${
-              selectedPublishers.includes(publisher)
-                ? 'bg-blue-600 text-white border-blue-600'
-                : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
-            }`}
-          >
-            {publisher}
-          </button>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-// کامپوننت فیلتر قیمت
-function PriceFilter() {
-  const { selectedPriceRange, setSelectedPriceRange } = useProductContext()
-  const [min, setMin] = useState(selectedPriceRange.min)
-  const [max, setMax] = useState(selectedPriceRange.max)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSelectedPriceRange({ min, max })
-    }, 500)
-
-    return () => clearTimeout(timer)
-  }, [min, max, setSelectedPriceRange])
-
-  return (
-    <div className="mb-6">
-      <h2 className="text-xl font-semibold mb-3">فیلتر بر اساس قیمت (تومان):</h2>
-      <div className="flex gap-4 items-center">
-        <input
-          type="number"
-          min={0}
-          value={min}
-          onChange={(e) => setMin(Number(e.target.value))}
-          className="border rounded px-3 py-1 w-24"
-          placeholder="حداقل"
-        />
-        <span>تا</span>
-        <input
-          type="number"
-          min={0}
-          value={max}
-          onChange={(e) => setMax(Number(e.target.value))}
-          className="border rounded px-3 py-1 w-24"
-          placeholder="حداکثر"
-        />
-      </div>
-    </div>
-  )
-}
 
 // کامپوننت فیلتر زبان
-function LanguageFilter() {
-  const { allProducts, selectedLanguages, setSelectedLanguages } = useProductContext()
 
-  const languages = Array.from(new Set(allProducts.map((p) => p.language)))
 
-  const toggleLanguage = (language: string) => {
-    if (selectedLanguages.includes(language)) {
-      setSelectedLanguages(selectedLanguages.filter((l) => l !== language))
-    } else {
-      setSelectedLanguages([...selectedLanguages, language])
-    }
-  }
-
-  return (
-    <div className="mb-6">
-      <h2 className="text-xl font-semibold mb-3">فیلتر بر اساس زبان:</h2>
-      <div className="flex flex-wrap gap-3">
-        {languages.map((language) => (
-          <button
-            key={language}
-            onClick={() => toggleLanguage(language)}
-            className={`px-4 py-2 rounded-full border transition ${
-              selectedLanguages.includes(language)
-                ? 'bg-blue-600 text-white border-blue-600'
-                : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
-            }`}
-          >
-            {language}
-          </button>
-        ))}
-      </div>
-    </div>
-  )
-}
+ 
 
 export default function CategoriesPage() {
   const {

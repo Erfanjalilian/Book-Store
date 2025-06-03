@@ -2,10 +2,10 @@
 import React from 'react';
 import { useAuth } from '@/app/Contexts/AuthContext';
 import Sidebar from "@/app/ComponentsUserPanel/Sidebar/Sidebar"
-import { FaUser, FaShoppingBag, FaHeart, FaAddressBook, FaCreditCard, FaSignOutAlt, FaBell, FaCog } from 'react-icons/fa';
+import {FaBell, FaCog } from 'react-icons/fa';
 
 const UserPanel = () => {
-  const { user, logout } = useAuth();
+  const { user} = useAuth();
   if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center text-gray-700 text-xl">

@@ -8,7 +8,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import clsx from 'clsx'
+
 
 interface Product {
   id: string

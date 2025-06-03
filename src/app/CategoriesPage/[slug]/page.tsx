@@ -31,6 +31,7 @@ type Props = {
 }
 
 export default function ProductPage({ params }: Props) {
+
   const [quantity, setQuantity] = useState(1)
   const [product, setProduct] = useState<Product | null>(null)
   const [loading, setLoading] = useState(true)

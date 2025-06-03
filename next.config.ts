@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
       'ponisha.ir',
       'novinhub.com',
       'deema.agency',
-      'dkstatics-public.digikala.com', // ← دامنه اضافه‌شده
+      'dkstatics-public.digikala.com',
+      'tarh.ir', // ← دامنه موردنظر شما اضافه شد
     ],
   },
 }

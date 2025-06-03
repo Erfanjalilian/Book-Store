@@ -11,12 +11,12 @@ import { useRouter } from 'next/navigation';
 
 
 export default function navbar() {
-  const { cart, removeFromCart, updateQuantity, clearCart } = useCart()
-  const { login, user, logout } = useAuth();
+  const {cart} = useCart()
+  const {user, logout } = useAuth();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
-  console.log(user)
+  
 
   const handleLogout = () => {
     logout();

@@ -1,4 +1,12 @@
+import Image from 'next/image';
 
+interface BannerItem {
+  title: string;
+  description: string;
+  cta_link: string;
+  cta_text: string;
+  image_url: string;
+}
 
 async function MiddleBannerAd(){
     const res=await fetch("https://683dc34a199a0039e9e6c8b6.mockapi.io/MiddleBannerAd")
@@ -10,8 +18,8 @@ async function MiddleBannerAd(){
   return (
     <div>
         {
-            data.map((item:any)=>(
-                <div className="relative w-full py-10 bg-gray-100">
+            data.map((item: BannerItem)=>(
+                <div key={item.title} className="relative w-full py-10 bg-gray-100">
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="text-right w-full md:w-1/2">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">{item.title}</h2>
@@ -23,9 +31,11 @@ async function MiddleBannerAd(){
 
         {/* نمایش تصویر بنر */}
         <div className="w-full md:w-1/2 mt-4 md:mt-0">
-          <img
+          <Image
             src={item.image_url}
             alt={item.title}
+            width={500}
+            height={300}
             className="w-full h-auto rounded-xl shadow-lg object-cover"
           />
         </div>

@@ -1,5 +1,4 @@
 "use client"
-import React, { use } from 'react';
 import { useCart } from "@/app/Contexts/CartContext"
 import { useAuth } from '@/app/Contexts/AuthContext';
 import { useState } from 'react';
@@ -16,7 +15,7 @@ type data={
     "isDefault": boolean
 }
 const Checkout = () => {
-    const { cart, removeFromCart, updateQuantity, clearCart } = useCart()
+    const { cart} = useCart()
     const {user}=useAuth()
     const [data, setData] = useState<data[]>();         // داده دریافتی
    

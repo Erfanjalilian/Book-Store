@@ -8,7 +8,7 @@ import { useAuth } from '@/app/Contexts/AuthContext';
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart()
-  const { login, user, logout } = useAuth();
+  const {user} = useAuth();
 
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.discount_price * item.quantity,
