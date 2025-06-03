@@ -10,7 +10,7 @@ type Props = {
 export default function ProductPage({ params }: Props) {
   return (
     <div>
-      <HandelSlug params={{ slug: params.slug }} />
+      <HandelSlug slug={params.slug} />
     </div>
   )
 }

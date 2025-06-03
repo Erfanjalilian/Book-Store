@@ -24,37 +24,36 @@ type Product = {
     created_at: string
     updated_at: string
   }
-  type Props = {
-    params?: {
-      slug?: string
-    }
-    searchParams?: { [key: string]: string | string[] | undefined }
+ 
+type Props = {
+    slug: string
   }
-function HandelSlug({ params }: Props){
+function HandelSlug({ slug }: Props){
     const [quantity, setQuantity] = useState(1)
     const [product, setProduct] = useState<Product | null>(null)
     const [loading, setLoading] = useState(true)
     const { addToCart } = useCart()
     useEffect(() => {
-        if (!params?.slug) return
+        if (!slug) return;
       
         const fetchProduct = async () => {
           try {
-            const res = await fetch(`https://683dbdd7199a0039e9e6b54e.mockapi.io/Products/${params.slug}`)
+            const res = await fetch(`https://683dbdd7199a0039e9e6b54e.mockapi.io/Products/${slug}`);
             if (!res.ok) {
-              throw new Error('Product not found')
+              throw new Error('Product not found');
             }
-            const data = await res.json()
-            setProduct(data)
+            const data = await res.json();
+            setProduct(data);
           } catch (error) {
-            console.error('Error fetching product:', error)
+            console.error('Error fetching product:', error);
           } finally {
-            setLoading(false)
+            setLoading(false);
           }
-        }
+        };
       
-        fetchProduct()
-      }, [params?.slug])
+        fetchProduct();
+      }, [slug]);
+      
       if (loading) {
         return (
           <div className="min-h-screen bg-gray-50 flex items-center justify-center">
