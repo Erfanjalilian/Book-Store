@@ -1,5 +1,5 @@
 
-import HandelSlug from "@/app/Components/HandelSlug/page"
+import HandelSlug from "@/HandelSlug/page"
 
 type PageProps = {
   params: {
