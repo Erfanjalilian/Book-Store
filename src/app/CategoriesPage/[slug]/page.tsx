@@ -27,11 +27,12 @@ type Product = {
 }
 
 type Props = {
-  params: {
-    slug: string
+  params?: {
+    slug?: string
   }
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }
+
 
 export default function ProductPage({ params }: Props) {
 
@@ -41,24 +42,27 @@ export default function ProductPage({ params }: Props) {
   const { addToCart } = useCart()
 
   // Fetch product data
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const res = await fetch(`https://683dbdd7199a0039e9e6b54e.mockapi.io/Products/${params.slug}`)
-        if (!res.ok) {
-          throw new Error('Product not found')
-        }
-        const data = await res.json()
-        setProduct(data)
-      } catch (error) {
-        console.error('Error fetching product:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
+ useEffect(() => {
+  if (!params?.slug) return
 
-    fetchProduct()
-  }, [params.slug])
+  const fetchProduct = async () => {
+    try {
+      const res = await fetch(`https://683dbdd7199a0039e9e6b54e.mockapi.io/Products/${params.slug}`)
+      if (!res.ok) {
+        throw new Error('Product not found')
+      }
+      const data = await res.json()
+      setProduct(data)
+    } catch (error) {
+      console.error('Error fetching product:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  fetchProduct()
+}, [params?.slug])
+
 
   if (loading) {
     return (
