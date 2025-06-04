@@ -1,7 +1,6 @@
 
 import Slider from "./Components/Slider/Slider"
 import BestBestSellerCarousel from "./Components/BestSellingProducts/BestSellingProducts"
-import TheLatestBooks from "./Components/TheLatestBooks/TheLatestBooks";
 import MiddleBannerAd from "./Components/MiddleBannerAd/MiddleBannerAd";
 import SpecialOffers from "./Components/SpecialOffers/SpecialOffers";
 import Comments from "./Components/Comments/Comments";
@@ -14,7 +13,6 @@ export default function Home() {
       <Slider />
       <BestBestSellerCarousel />
       <br />
-      <TheLatestBooks />
       
       <MiddleBannerAd />
       <SpecialOffers/>
