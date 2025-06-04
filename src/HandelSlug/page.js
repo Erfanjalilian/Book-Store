@@ -3,32 +3,11 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useCart } from '@/app/Contexts/CartContext'
-type Product = {
-    id: string
-    title: string
-    author: string
-    isbn: string
-    price: number
-    discount_price: number
-    description: string
-    cover_image: string
-    publisher: string
-    publication_date: string
-    pages: number
-    language: string
-    categories: string
-    stock: number
-    sold_count: number
-    average_rating: number
-    reviews_count: number
-    created_at: string
-    updated_at: string
-  }
+
+
  
-type Props = {
-    slug: string
-  }
-function HandelSlug({ slug }: Props){
+
+function HandelSlug({ slug }){
     const [quantity, setQuantity] = useState(1)
     const [product, setProduct] = useState<Product | null>(null)
     const [loading, setLoading] = useState(true)
@@ -64,7 +43,7 @@ function HandelSlug({ slug }: Props){
       if (!product) {
         notFound()
       }
-      const handleQuantityChange = (value: number) => {
+      const handleQuantityChange = (value) => {
         if (value >= 1 && value <= product.stock) {
           setQuantity(value)
         }

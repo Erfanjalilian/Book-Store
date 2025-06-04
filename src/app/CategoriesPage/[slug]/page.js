@@ -1,12 +1,8 @@
 import HandelSlug from "@/HandelSlug/page"
 
-type PageProps = {
-  params: {
-    slug: string
-  }
-}
 
-export default function ProductPage({ params }: PageProps) {
+
+export default function ProductPage({ params }) {
   return (
     <div>
       <HandelSlug slug={params.slug} />
@@ -23,7 +19,7 @@ export async function generateStaticParams() {
       throw new Error("Failed to fetch products")
     }
 
-    const products: { id: string }[] = await res.json()
+    const products= await res.json()
 
     return products.map((product) => ({
       slug: product.id,
