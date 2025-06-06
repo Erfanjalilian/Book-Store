@@ -67,7 +67,7 @@ export default function SpecialOffers() {
           {products.map((product) => (
             <SwiperSlide key={product.id}>
               <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-3 flex flex-col h-full">
-                <Link href={`/product/${product.id}`}>
+                <Link href={`/CategoriesPage/${product.id}`}>
                   <div className="w-full h-52 rounded-xl overflow-hidden mb-3 relative">
                     <Image
                       src={product.cover_image}

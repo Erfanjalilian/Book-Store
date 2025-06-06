@@ -96,11 +96,13 @@ export default function BestSellerCarousel() {
                 </Link>
 
                 <div className="flex items-center justify-between mt-auto pt-2 border-t border-gray-200">
+                  <Link href={`/CategoriesPage/${product.id}`}>
         
                   <button className="flex items-center gap-2 text-white bg-blue-600 hover:bg-blue-700 text-sm px-3 py-1.5 rounded-xl transition">
                     <FaShoppingCart />
                     افزودن
                   </button>
+                  </Link>
                   <button className="text-red-500 hover:text-red-600 text-lg">
                     <FaHeart />
                   </button>
