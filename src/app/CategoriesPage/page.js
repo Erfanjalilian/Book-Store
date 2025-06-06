@@ -27,7 +27,7 @@ export default function CategoriesPage() {
     setSelectedPriceRange,
   } = useProductContext()
 
-  const [categories, setCategories] = useState<string[]>([])
+  const [categories, setCategories] = useState([])
   const [min, setMin] = useState(selectedPriceRange.min)
   const [max, setMax] = useState(selectedPriceRange.max)
 
@@ -47,7 +47,7 @@ export default function CategoriesPage() {
     return () => clearTimeout(timer)
   }, [min, max, setSelectedPriceRange])
 
-  const toggleCategory = (category: string) => {
+  const toggleCategory = (category) => {
     if (selectedCategories.includes(category)) {
       setSelectedCategories(selectedCategories.filter((c) => c !== category))
     } else {
@@ -55,7 +55,7 @@ export default function CategoriesPage() {
     }
   }
 
-  const togglePublisher = (publisher: string) => {
+  const togglePublisher = (publisher) => {
     if (selectedPublishers.includes(publisher)) {
       setSelectedPublishers(selectedPublishers.filter((p) => p !== publisher))
     } else {
@@ -63,7 +63,7 @@ export default function CategoriesPage() {
     }
   }
 
-  const toggleLanguage = (language: string) => {
+  const toggleLanguage = (language) => {
     if (selectedLanguages.includes(language)) {
       setSelectedLanguages(selectedLanguages.filter((l) => l !== language))
     } else {
@@ -174,7 +174,7 @@ export default function CategoriesPage() {
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredProducts.map((product: Product) => (
+                {filteredProducts.map((product) => (
                   <div
                     key={product.id}
                     className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"

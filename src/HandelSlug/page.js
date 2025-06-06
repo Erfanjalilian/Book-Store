@@ -9,7 +9,7 @@ import { useCart } from '@/app/Contexts/CartContext'
 
 function HandelSlug({ slug }){
     const [quantity, setQuantity] = useState(1)
-    const [product, setProduct] = useState<Product | null>(null)
+    const [product, setProduct] = useState(null)
     const [loading, setLoading] = useState(true)
     const { addToCart } = useCart()
     useEffect(() => {
