@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useProductContext, Product } from '@/app/Contexts/ProductContext'
+import { useProductContext} from '@/app/Contexts/ProductContext'
 import Link from 'next/link'
 import Image from 'next/image'
 
