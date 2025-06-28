@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/Contexts/AuthContext';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
+import Link from 'next/link'
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -35,12 +36,15 @@ const LoginPage = () => {
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
             ورود به حساب کاربری
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            یا{' '}
-            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+          
+          <div className="mt-2 text-sm text-gray-600">
+            <p>اگر حساب کاربری ندارید</p>
+            
+            <Link href="/Registration" className="font-medium text-indigo-600 hover:text-indigo-500">
               ثبت نام کنید
-            </a>
-          </p>
+           </Link>
+          </div>
+           A
         </div>
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
