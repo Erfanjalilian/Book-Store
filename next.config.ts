@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       'deema.agency',
       'dkstatics-public.digikala.com',
       'tarh.ir', // ← دامنه موردنظر شما اضافه شد
+      '8tagketab.ir'
     ],
   },
 }
