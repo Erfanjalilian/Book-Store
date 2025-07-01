@@ -44,7 +44,7 @@ const LoginPage = () => {
               ثبت نام کنید
            </Link>
           </div>
-           A
+          
         </div>
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
