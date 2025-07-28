@@ -1,17 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useProductContext} from '@/app/Contexts/ProductContext'
+import { useProductContext } from '@/app/Contexts/ProductContext'
 import Link from 'next/link'
 import Image from 'next/image'
-
-// کامپوننت فیلتر ناشر
-
-
-// کامپوننت فیلتر زبان
-
-
- 
 
 export default function CategoriesPage() {
   const {
@@ -69,6 +61,29 @@ export default function CategoriesPage() {
     } else {
       setSelectedLanguages([...selectedLanguages, language])
     }
+  }
+
+  // تابع کمکی برای گرفتن قیمت نهایی (تخفیف خورده یا قیمت اصلی)
+  const getFinalPrice = (product) => {
+    if (!product) return 0
+    const hasDiscount =
+      typeof product.discount_price === 'number' &&
+      product.discount_price > 0 &&
+      product.discount_price < product.price
+    return hasDiscount ? product.discount_price : product.price
+  }
+
+  // تابع کمکی برای گرفتن درصد تخفیف
+  const getDiscountPercent = (product) => {
+    if (
+      typeof product.discount_price === 'number' &&
+      product.discount_price > 0 &&
+      product.discount_price < product.price
+    ) {
+      const diff = product.price - product.discount_price
+      return Math.round((diff / product.price) * 100)
+    }
+    return 0
   }
 
   return (
@@ -174,35 +189,53 @@ export default function CategoriesPage() {
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredProducts.map((product) => (
-                  <div
-                    key={product.id}
-                    className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                  >
-                    <Link href={`/CategoriesPage/${product.id}`} className="block">
-                      <div className="relative w-full h-64 overflow-hidden">
-                        <Image
-                          src={product.cover_image}
-                          alt={product.title}
-                          fill
-                          className="object-cover transition-transform duration-500 hover:scale-110"
-                        />
-                      </div>
-                      <div className="p-6">
-                        <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-1">{product.title}</h3>
-                        <p className="text-sm text-gray-600 mb-4 line-clamp-1">{product.author}</p>
-                        <div className="flex justify-between items-center">
-                          <span className="font-bold text-green-600 text-lg">
-                            {product.discount_price.toLocaleString()} تومان
-                          </span>
-                          <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-                            ⭐ {product.average_rating}
-                          </span>
+                {filteredProducts.map((product) => {
+                  const finalPrice = getFinalPrice(product)
+                  const discountPercent = getDiscountPercent(product)
+                  return (
+                    <div
+                      key={product.id}
+                      className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                    >
+                      <Link href={`/CategoriesPage/${product.id}`} className="block">
+                        <div className="relative w-full h-64 overflow-hidden">
+                          <Image
+                            src={product.cover_image}
+                            alt={product.title}
+                            fill
+                            className="object-cover transition-transform duration-500 hover:scale-110"
+                          />
                         </div>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
+                        <div className="p-6">
+                          <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-1">{product.title}</h3>
+                          <p className="text-sm text-gray-600 mb-4 line-clamp-1">{product.author}</p>
+
+                          <div className="flex justify-between items-center">
+                            <span className="font-bold text-green-600 text-lg">
+                              {finalPrice.toLocaleString()} تومان
+                            </span>
+
+                            {discountPercent > 0 && (
+                              <span className="text-lg line-through text-gray-400">
+                                {product.price.toLocaleString()} تومان
+                              </span>
+                            )}
+
+                            {discountPercent > 0 && (
+                              <span className="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-semibold">
+                                {discountPercent}% تخفیف
+                              </span>
+                            )}
+
+                            <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                              ⭐ {product.average_rating}
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                })}
               </div>
             )}
           </div>

@@ -20,13 +20,24 @@ function Favorites() {
   const myId = user?.id;
 
   useEffect(() => {
-    if (!myId) return;
-
+    if (!myId) {
+      setFavorites([]);
+      return;
+    }
     fetch(`https://683dc5b3199a0039e9e6d25e.mockapi.io/favorites?userId=${myId}`)
-      .then((res) => res.json())
-      .then((data) => setFavorites(data))
+      .then((res) => {
+        if (!res.ok) {
+          setFavorites([]);
+          return;
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setFavorites(Array.isArray(data) ? data : []);
+      })
       .catch((error) => {
         console.error("Error fetching favorite data:", error);
+        setFavorites([]);
       });
   }, [myId]);
 

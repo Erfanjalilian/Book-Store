@@ -29,17 +29,33 @@ function OrderUserPanel() {
   const myId = user?.id;
 
   useEffect(() => {
-    if (!myId) return;
-
+    if (!myId) {
+      setData(null);
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     fetch(`https://683dc48d199a0039e9e6ce6e.mockapi.io/orders/${myId}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          setData(null);
+          setLoading(false);
+          return;
+        }
+        return res.json();
+      })
       .then(orderData => {
-        setData(orderData);
+        // اگر هیچ سفارشی وجود نداشت یا داده معتبر نبود
+        if (!orderData || !orderData.products || !Array.isArray(orderData.products)) {
+          setData(null);
+        } else {
+          setData(orderData);
+        }
         setLoading(false);
       })
       .catch(error => {
         console.error("Error fetching order data:", error);
+        setData(null);
         setLoading(false);
       });
   }, [myId]);

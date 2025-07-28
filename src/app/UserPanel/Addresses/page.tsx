@@ -23,12 +23,23 @@ export default function AddressPage() {
   const [editData, setEditData] = useState<Address | null>(null);
 
   const fetchAddresses = useCallback(async () => {
-    if (!user) return;
-    const res = await fetch(
-      `https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses?userId=${user.id}`
-    );
-    const data = await res.json();
-    setAddresses(data);
+    if (!user || !user.id) {
+      setAddresses([]);
+      return;
+    }
+    try {
+      const res = await fetch(
+        `https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses?userId=${user.id}`
+      );
+      if (!res.ok) {
+        setAddresses([]);
+        return;
+      }
+      const data = await res.json();
+      setAddresses(Array.isArray(data) ? data : []);
+    } catch (err) {
+      setAddresses([]);
+    }
   }, [user]);
 
   useEffect(() => {
@@ -133,7 +144,7 @@ export default function AddressPage() {
           </button>
         </div>
 
-        {addresses.length === 0 ? (
+        {(!user || addresses.length === 0) ? (
           <p className="text-gray-500">شما هنوز هیچ آدرسی ثبت نکرده‌اید.</p>
         ) : (
           <div className="grid gap-4">

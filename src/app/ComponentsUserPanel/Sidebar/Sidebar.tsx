@@ -11,10 +11,12 @@ import {
   FaSignOutAlt,
 } from 'react-icons/fa';
 import { useAuth } from '@/app/Contexts/AuthContext';
+import { useRouter } from 'next/navigation';
 
 function Sidebar() {
   const pathname = usePathname();
   const { user, logout } = useAuth();
+  const router = useRouter();
 
   if (!user) {
     return (
@@ -88,7 +90,10 @@ function Sidebar() {
           })}
 
           <button
-            onClick={logout}
+            onClick={() => {
+              logout();
+              router.push('/');
+            }}
             className="w-full flex items-center space-x-3 p-2 lg:p-3 rounded-lg text-red-600 hover:bg-red-50 text-sm lg:text-base"
           >
             <FaSignOutAlt className="h-5 w-5" />

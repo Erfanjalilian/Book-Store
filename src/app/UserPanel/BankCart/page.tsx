@@ -19,10 +19,21 @@ function BankCart() {
   const [cards, setCards] = useState<BankCard[]>([]);
 
   const fetchBankCart = useCallback(async () => {
-    if (!user) return;
-    const res = await fetch(`https://683dc6f7199a0039e9e6d7ab.mockapi.io/bankCards?userId=${user.id}`);
-    const data = await res.json();
-    setCards(data);
+    if (!user || !user.id) {
+      setCards([]);
+      return;
+    }
+    try {
+      const res = await fetch(`https://683dc6f7199a0039e9e6d7ab.mockapi.io/bankCards?userId=${user.id}`);
+      if (!res.ok) {
+        setCards([]);
+        return;
+      }
+      const data = await res.json();
+      setCards(Array.isArray(data) ? data : []);
+    } catch (err) {
+      setCards([]);
+    }
   }, [user]);
 
   useEffect(() => {
