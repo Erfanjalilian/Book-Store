@@ -27,7 +27,7 @@ export default function AddressPage() {
       setAddresses([]);
       return;
     }
-    try {
+    
       const res = await fetch(
         `https://683dc5b3199a0039e9e6d25e.mockapi.io/addresses?userId=${user.id}`
       );
@@ -37,9 +37,8 @@ export default function AddressPage() {
       }
       const data = await res.json();
       setAddresses(Array.isArray(data) ? data : []);
-    } catch (err) {
-      setAddresses([]);
-    }
+  
+     
   }, [user]);
 
   useEffect(() => {

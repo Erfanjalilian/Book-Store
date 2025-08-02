@@ -23,7 +23,7 @@ function BankCart() {
       setCards([]);
       return;
     }
-    try {
+   
       const res = await fetch(`https://683dc6f7199a0039e9e6d7ab.mockapi.io/bankCards?userId=${user.id}`);
       if (!res.ok) {
         setCards([]);
@@ -31,9 +31,7 @@ function BankCart() {
       }
       const data = await res.json();
       setCards(Array.isArray(data) ? data : []);
-    } catch (err) {
-      setCards([]);
-    }
+    
   }, [user]);
 
   useEffect(() => {
